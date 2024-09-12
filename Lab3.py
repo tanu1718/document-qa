@@ -22,6 +22,14 @@ if "messages" not in st.session_state:
         {"role": "assistant", "content": "How can I help you?"}
     ]
 
+# Function to maintain a buffer of only the last two user messages and corresponding assistant responses
+def maintain_message_buffer():
+    # Only keep the last two user messages and corresponding assistant responses
+    buffer_size = 4  # 2 user messages + 2 assistant responses
+    if len(st.session_state["messages"]) > buffer_size:
+        # Remove older messages
+        st.session_state["messages"] = st.session_state["messages"][-buffer_size:]
+
 # Display the messages in chat format
 for msg in st.session_state.messages:
     chat_msg = st.chat_message(msg["role"])
@@ -50,3 +58,6 @@ if prompt := st.chat_input("What is up?"):
 
     # Append assistant's response to the session state
     st.session_state.messages.append({"role": "assistant", "content": response})
+
+    # Maintain message buffer to only keep the last 2 messages (and corresponding assistant responses)
+    maintain_message_buffer()
