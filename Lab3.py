@@ -33,7 +33,7 @@ else:
         "Select a format for summarizing the document:",
         (
             "Summarize the document in 100 words",
-            "Summarize the document in 2 connecting paragraphs",
+            "Summarize the document in detailed format",
             "Summarize the document in 5 bullet points"
         ),
     )
