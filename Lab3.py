@@ -2,7 +2,7 @@ import streamlit as st
 from openai import OpenAI
 
 # Set up the title and sidebar for model selection
-st.title("MY Lab3 Question Answering Chatbot")
+st.title("Lab 3 -- Chatbot")
 
 openAI_model = st.sidebar.selectbox("Which Model?", ("mini", "regular"))
 
