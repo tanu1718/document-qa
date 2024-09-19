@@ -1,6 +1,5 @@
 import streamlit as st
 from openai import OpenAI
-import chromadb
 from PyPDF2 import PdfReader
 import os
 
@@ -9,6 +8,8 @@ import os
 __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+
+import chromadb
 
 def ensure_openai_client():
     if 'openai_client' not in st.session_state:
