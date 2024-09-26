@@ -56,17 +56,7 @@ def get_clothing_suggestions(weather_info):
 # User input for location
 location = st.text_input("Enter a city (or leave blank for default 'Syracuse, NY'):")
 
-# Fetch weather information
-if st.button("Get Weather and Suggestion", key="weather_button"):
-    weather_info = get_current_weather(location, st.secrets["weather_api_key"])
-    st.write(f"Weather information for {weather_info['location']}:")
-    st.write(f"Temperature: {weather_info['temperature']}°C")
-    st.write(f"Feels Like: {weather_info['feels_like']}°C")
-    st.write(f"Humidity: {weather_info['humidity']}%")
 
-    # Fetch clothing suggestions
-    # suggestion = get_clothing_suggestions(weather_info)
-    # st.write(f"Suggested clothing: {suggestion}")
 
 # Get clothing suggestion  
 if st.button("Get Clothing Suggestion", key="clothing_button"):
